@@ -1,5 +1,4 @@
-Testify - Thou Shalt Write Tests
-================================
+# Testify - Thou Shalt Write Tests
 
 [![Build Status](https://travis-ci.org/stretchr/testify.svg)](https://travis-ci.org/stretchr/testify) [![Go Report Card](https://goreportcard.com/badge/github.com/ghetzel/testify)](https://goreportcard.com/report/github.com/ghetzel/testify) [![GoDoc](https://godoc.org/github.com/ghetzel/testify?status.svg)](https://godoc.org/github.com/ghetzel/testify)
 
@@ -7,28 +6,25 @@ Go code (golang) set of packages that provide many tools for testifying that you
 
 Features include:
 
-  * [Easy assertions](#assert-package)
-  * [Mocking](#mock-package)
-  * [Testing suite interfaces and functions](#suite-package)
+- [Easy assertions](#assert-package)
+- [Mocking](#mock-package)
+- [Testing suite interfaces and functions](#suite-package)
 
 Get started:
 
-  * Install testify with [one line of code](#installation), or [update it with another](#staying-up-to-date)
-  * For an introduction to writing test code in Go, see http://golang.org/doc/code.html#Testing
-  * Check out the API Documentation http://godoc.org/github.com/ghetzel/testify
-  * To make your testing life easier, check out our other project, [gorc](http://github.com/stretchr/gorc)
-  * A little about [Test-Driven Development (TDD)](http://en.wikipedia.org/wiki/Test-driven_development)
+- Install testify with [one line of code](#installation), or [update it with another](#staying-up-to-date)
+- For an introduction to writing test code in Go, see http://golang.org/doc/code.html#Testing
+- Check out the API Documentation http://godoc.org/github.com/ghetzel/testify
+- To make your testing life easier, check out our other project, [gorc](http://github.com/stretchr/gorc)
+- A little about [Test-Driven Development (TDD)](http://en.wikipedia.org/wiki/Test-driven_development)
 
-
-
-[`assert`](http://godoc.org/github.com/ghetzel/testify/assert "API documentation") package
--------------------------------------------------------------------------------------------
+## [`assert`](http://godoc.org/github.com/ghetzel/testify/assert "API documentation") package
 
 The `assert` package provides some helpful methods that allow you to write better test code in Go.
 
-  * Prints friendly, easy to read failure descriptions
-  * Allows for very readable code
-  * Optionally annotate each assertion with a message
+- Prints friendly, easy to read failure descriptions
+- Allows for very readable code
+- Optionally annotate each assertion with a message
 
 See it in action:
 
@@ -63,8 +59,8 @@ func TestSomething(t *testing.T) {
 }
 ```
 
-  * Every assert func takes the `testing.T` object as the first argument.  This is how it writes the errors out through the normal `go test` capabilities.
-  * Every assert func returns a bool indicating whether the assertion was successful or not, this is useful for if you want to go on making further assertions under certain conditions.
+- Every assert func takes the `testing.T` object as the first argument. This is how it writes the errors out through the normal `go test` capabilities.
+- Every assert func returns a bool indicating whether the assertion was successful or not, this is useful for if you want to go on making further assertions under certain conditions.
 
 if you assert many times, use the below:
 
@@ -98,15 +94,13 @@ func TestSomething(t *testing.T) {
 }
 ```
 
-[`require`](http://godoc.org/github.com/ghetzel/testify/require "API documentation") package
----------------------------------------------------------------------------------------------
+## [`require`](http://godoc.org/github.com/ghetzel/testify/require "API documentation") package
 
 The `require` package provides same global functions as the `assert` package, but instead of returning a boolean result they terminate current test.
 
 See [t.FailNow](http://golang.org/pkg/testing/#T.FailNow) for details.
 
-[`mock`](http://godoc.org/github.com/ghetzel/testify/mock "API documentation") package
-----------------------------------------------------------------------------------------
+## [`mock`](http://godoc.org/github.com/ghetzel/testify/mock "API documentation") package
 
 The `mock` package provides a mechanism for easily writing mock objects that can be used in place of real objects when writing test code.
 
@@ -194,10 +188,9 @@ For more information on how to write mock code, check out the [API documentation
 
 You can use the [mockery tool](http://github.com/vektra/mockery) to autogenerate the mock code against an interface as well, making using mocks much quicker.
 
-[`suite`](http://godoc.org/github.com/ghetzel/testify/suite "API documentation") package
------------------------------------------------------------------------------------------
+## [`suite`](http://godoc.org/github.com/ghetzel/testify/suite "API documentation") package
 
-The `suite` package provides functionality that you might be used to from more common object oriented languages.  With it, you can build a testing suite as a struct, build setup/teardown methods and testing methods on your struct, and run them with 'go test' as per normal.
+The `suite` package provides functionality that you might be used to from more common object oriented languages. With it, you can build a testing suite as a struct, build setup/teardown methods and testing methods on your struct, and run them with 'go test' as per normal.
 
 An example suite is shown below:
 
@@ -275,10 +268,9 @@ func TestExampleTestSuite(t *testing.T) {
 }
 ```
 
-------
+---
 
-Installation
-============
+# Installation
 
 To install Testify, use `go get`:
 
@@ -309,34 +301,30 @@ func TestSomething(t *testing.T) {
 }
 ```
 
-------
+---
 
-Staying up to date
-==================
+# Staying up to date
 
 To update Testify to the latest version, use `go get -u github.com/ghetzel/testify`.
 
-------
+---
 
-Supported go versions
-==================
+# Supported go versions
 
 We support the three major Go versions, which are 1.9, 1.10, and 1.11 at the moment.
 
-------
+---
 
-Contributing
-============
+# Contributing
 
 Please feel free to submit issues, fork the repository and send pull requests!
 
-When submitting an issue, we ask that you please include a complete test function that demonstrates the issue.  Extra credit for those using Testify to write the test code that demonstrates it.
+When submitting an issue, we ask that you please include a complete test function that demonstrates the issue. Extra credit for those using Testify to write the test code that demonstrates it.
 
 Code generation is used. Look for `CODE GENERATED AUTOMATICALLY` at the top of some files. Run `go generate ./...` to update generated files.
 
-------
+---
 
-License
-=======
+# License
 
 This project is licensed under the terms of the MIT license.
